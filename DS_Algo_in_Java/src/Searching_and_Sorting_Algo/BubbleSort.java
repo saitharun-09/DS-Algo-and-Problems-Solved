@@ -1,4 +1,4 @@
-package java_Begin;
+package Searching_and_Sorting_Algo;
 
 public class BubbleSort {
 	public static void main(String[] arg) {
