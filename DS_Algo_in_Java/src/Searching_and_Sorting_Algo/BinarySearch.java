@@ -3,7 +3,7 @@ package Searching_and_Sorting_Algo;
 public class BinarySearch {
 	public static void main(String[] arg) {
 		int[] arr = {1,2,3,4,5,6,7,8,9};
-		int key = 1;
+		int key = 10;
 	 //   System.out.println(binarySearch(arr,key));
 	    System.out.println(recursiveSearch(0, arr.length-1,key,arr));
 	}
