@@ -11,7 +11,35 @@ public class MinMaxDistancebtwGasStations {
 		int[] nums = {1, 2, 3, 4, 5, 6 ,7, 8, 9, 10};
 		int k = 9;
 		System.out.println(minimiseMaxDistance(nums,k));
+		System.out.println(minimiseMaxDistancePQ(nums, k));
 	}
+	
+	private static double minimiseMaxDistance(int[] nums, int k) {
+		double result = Math.pow(10, -6);
+		double low = 0;
+		double high = 0;
+		for (int i = 0; i<nums.length-1; i++) {
+			high = Math.max(nums[i+1]-nums[i], high);
+		}
+		while (high - low > result) {
+			double mid = low+(high-low)/2;
+			int count = checkPossibleGas(nums,mid);
+			if (count<=k) high = mid;
+			else low = mid;
+		}
+		return high;
+	}
+
+	private static int checkPossibleGas(int[] nums, double mid) {
+		int count = 0;
+		for (int i = 0; i<nums.length-1; i++) {
+			int gap = nums[i + 1] - nums[i];
+            count += (int) Math.floor(gap / mid); 
+		}
+		return count;
+	}
+	
+	// Priority Queue Answer for TC-> O(klogn+nlogn) and SC -> O(n-1) Better Solution  
 
 	static class Pair {
 	    double length;
@@ -23,7 +51,7 @@ public class MinMaxDistancebtwGasStations {
 	    }
 	}
 	
-	public static double minimiseMaxDistance(int[] nums, int k) {
+	public static double minimiseMaxDistancePQ(int[] nums, int k) {
 		int[] arr = new int[nums.length-1];
 		PriorityQueue<Pair> pq = new PriorityQueue<>(
 				(a,b)-> Double.compare(b.length, a.length));
