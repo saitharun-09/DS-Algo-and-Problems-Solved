@@ -6,8 +6,8 @@ import java.util.Collections;
 public class TaskScheduleAndResourceConsumption {
 
 	public static void main(String[] args) {
-		//int[] nums = {6,4,9,10,34,56,54};
-		int[] nums = {4,3,2,1};
+		int[] nums = {6,4,9,10,34,56,54};
+		//int[] nums = {4,3,2,1};
 		System.out.println(resourceConsumption(nums));
 	}
 	

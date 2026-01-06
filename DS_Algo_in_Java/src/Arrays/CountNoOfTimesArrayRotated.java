@@ -3,10 +3,10 @@ package Arrays;
 public class CountNoOfTimesArrayRotated {
 
 	public static void main(String[] args) {
-		int[] nums = {3,2,1};
+		int[] nums = {4,3,2,1};
 		System.out.println(countRotations(nums));
 	}
-
+	
 	public static int countRotations(int[] nums) {
         if (nums.length==1) return 0;
         int min = Integer.MAX_VALUE;
