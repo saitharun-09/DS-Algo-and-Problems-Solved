@@ -10,7 +10,10 @@ public class cpuTime {
 	public static void main(String[] args) {
 		int n = 2; 
 		List<String> logs = Arrays.asList("0:start:0","1:start:2","1:end:5","0:end:6");
-		System.out.println(Arrays.toString(exclusiveTime(n, logs))); 
+		int a = 10;
+		a = a++ + ++a;
+		System.out.println(a);
+		//System.out.println(Arrays.toString(exclusiveTime(n, logs))); 
 	}
 	
 	public static int[] exclusiveTime(int n, List<String> logs) {
