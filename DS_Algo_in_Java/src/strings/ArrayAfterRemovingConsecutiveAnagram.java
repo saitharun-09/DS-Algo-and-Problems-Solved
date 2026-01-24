@@ -1,0 +1,38 @@
+package strings;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ArrayAfterRemovingConsecutiveAnagram {
+
+	public static void main(String[] args) {
+		String[] words = {"z","z","z","gsw","wsg","gsw","krptu"};
+		System.out.println(removeAnagrams(words));
+	}
+	
+	// O(n) T.C with constant 26 for Anagram check 
+	public static List<String> removeAnagrams(String[] words) {
+        List<String> list = new ArrayList<>();
+        String prev = "";
+        for (String word : words) {
+            if (!anagramCheck(word, prev)) {
+                list.add(word);
+                prev = word;
+            }
+        }
+        return list;
+    }
+    public static boolean anagramCheck(String s, String t) {
+        if (s.length()!=t.length()) return false;
+        int[] arr1 = new int[26];
+        int[] arr2 = new int[26];
+        for (int i = 0; i<s.length(); i++) {
+            arr1[s.charAt(i)-'a']++;
+            arr2[t.charAt(i)-'a']++;
+        }
+        for (int i = 0; i<26; i++) {
+            if (arr1[i]!=arr2[i]) return false;
+        }
+        return true;
+    }	
+}
