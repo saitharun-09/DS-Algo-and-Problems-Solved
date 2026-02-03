@@ -2,20 +2,20 @@ package linked_Lists;
 
 import java.util.LinkedList;
 
-public class Deletion_Ops_In_LinkedList {
+public class Deletion_Operations_In_SinglyLinkedList {
 
 	public static void main(String[] args) {
-		Node head = LinkedListUtil.createList(new int[] {1,2,3,4,5});
-		int key = 3;
+		Node head = Node.createList(new int[] {1,2,3,4,5});
+		int key = 7;
 		head = removekeyNode(head, key); 
 	//	removeHead(linkedList);
 	//	removeTail(linkedList);
+		head = removeElements(head, 3);
 		Node temp = head; 
 		while (temp != null) {
 			System.out.println(temp.data);
 			temp = temp.next;
 		}
-		
 	}
 
 	// To Remove Head of Linked List 
@@ -60,4 +60,19 @@ public class Deletion_Ops_In_LinkedList {
         }
 		return head;
 	}
+	
+	private static Node removeElements(Node head, int val) {
+        if (head == null) return head;
+        Node dummy = new Node(0);
+        dummy.next = head;
+        Node temp = head; 
+        Node prev = dummy ;
+        while (temp != null) {
+            if (temp.data == val) {
+                prev.next = temp.next;
+            }else prev = temp;
+            temp = temp.next;
+        }
+        return dummy.next;
+    }
 }

@@ -4,13 +4,15 @@ class Node {
 	int data;
 	Node next;
 	
-	Node(int value){
-		data = value;
-		next = null;
+	Node(int value, Node next){
+		this.data = value;
+		this.next = next;
 	}
-}
-
-class LinkedListUtil {
+	
+	Node(int value){
+		this.data = value;
+		this.next = null;
+	}
 
     public static Node createList(int[] arr) {
         if (arr == null || arr.length == 0) return null;
@@ -23,7 +25,8 @@ class LinkedListUtil {
         return head;
     }   
 }
-public class Traversal_Array2LL_Operations_in_LL {
+
+public class Traversal_Array2LL_Ops_in_SinglyLL {
 	
 	public static void main(String[] args) {
 		int[] arr = {5,9,4,7,6,52,42};
