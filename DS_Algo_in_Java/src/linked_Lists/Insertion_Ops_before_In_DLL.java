@@ -6,7 +6,8 @@ public class Insertion_Ops_before_In_DLL {
 		DLLNode head = DLLNode.createList(new int[] {1,2,3,4,5});
 		//head = insertBeforeHeadInDLL(head);
 		//head = insertBeforeTailInDLL(head);
-		head = insertBeforeKthNodeInDLL(head, 1);
+		//head = insertBeforeKthNodeInDLL(head, 1);
+		// Given Node which is != head, insert before 
 		while (head != null) {
 			System.out.println(head.data);
 			head = head.next;
