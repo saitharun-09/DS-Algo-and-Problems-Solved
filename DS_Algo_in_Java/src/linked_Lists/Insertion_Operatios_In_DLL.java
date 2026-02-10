@@ -1,6 +1,6 @@
 package linked_Lists;
 
-public class Insertion_Ops_before_In_DLL {
+public class Insertion_Operatios_In_DLL {
 
 	public static void main(String[] args) {
 		DLLNode head = DLLNode.createList(new int[] {1,2,3,4,5});
@@ -54,7 +54,24 @@ public class Insertion_Ops_before_In_DLL {
 		return head;
 	}
 
+	
+	// Complete these All....
 	private static DLLNode insertBeforeHeadInDLL(DLLNode head) {
+		DLLNode curr = new DLLNode(0,head,null);
+		head.prev = curr;
+		return curr;
+	}
+	private static DLLNode insertAfterKthNodeInDLL(DLLNode head) {
+		DLLNode curr = new DLLNode(0,head,null);
+		head.prev = curr;
+		return curr;
+	}
+	private static DLLNode insertAfterTailInDLL(DLLNode head) {
+		DLLNode curr = new DLLNode(0,head,null);
+		head.prev = curr;
+		return curr;
+	}
+	private static DLLNode insertAfterHeadInDLL(DLLNode head) {
 		DLLNode curr = new DLLNode(0,head,null);
 		head.prev = curr;
 		return curr;
