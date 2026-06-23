@@ -14,11 +14,19 @@ public class Reverse_DLL {
 	}
 
 	private static DLLNode reverseDll(DLLNode head) {
-		
-		return head;
+		if (head == null) return head;
+		DLLNode temp = head;
+		DLLNode last  = null;
+		while(temp != null){
+			last = temp.prev;
+			temp.prev = temp.next;
+			temp.next = last;
+			temp = temp.prev;
+		}
+		return last.prev;
 	}
 
-	/*
+/*
 	private static DLLNode reverseDll(DLLNode head) {
 		ArrayList<Integer> array = new ArrayList<>();
 		DLLNode temp = head;
@@ -34,5 +42,5 @@ public class Reverse_DLL {
         }
 		return head;
 	}
-	*/
+*/
 }
